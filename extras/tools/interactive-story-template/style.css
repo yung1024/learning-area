@@ -1,0 +1,156 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f8fc;
+  --card: #ffffff;
+  --ink: #1f2a44;
+  --sub: #5a6785;
+  --accent: #2b6cf6;
+  --border: #d8e0f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+header {
+  padding: 1.2rem 1.5rem;
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+header h1 {
+  margin: 0 0 0.4rem;
+  font-size: 1.5rem;
+}
+
+header p {
+  margin: 0;
+  color: #dbe5ff;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 420px) 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.editor,
+.preview {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.editor {
+  max-height: calc(100vh - 140px);
+  overflow: auto;
+}
+
+.hint {
+  color: var(--sub);
+  font-size: 0.9rem;
+}
+
+.editor-block,
+.choice-block {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-size: 0.92rem;
+  color: var(--sub);
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  margin-top: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  font-weight: 600;
+}
+
+.story-node,
+.story-ending {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  scroll-margin-top: 1rem;
+}
+
+.story-node h3,
+.story-ending h3 {
+  margin-top: 0;
+}
+
+.media-16x9 {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.9rem;
+}
+
+.choice-card {
+  display: block;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  color: inherit;
+  background: #fbfdff;
+}
+
+.choice-card span {
+  display: block;
+  padding: 0.55rem 0.7rem;
+  font-weight: 600;
+}
+
+.choice-card:hover,
+.choice-card:focus-visible {
+  outline: 2px solid #93b4ff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .editor {
+    max-height: none;
+  }
+}
