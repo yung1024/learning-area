@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>三节点互动剧情模板</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>三节点互动剧情模板</h1>
+      <p>编辑左侧内容，右侧实时预览。每个节点与选项均支持 16:9 配图。</p>
+    </header>
+
+    <main class="layout">
+      <aside class="editor" aria-label="剧情编辑器">
+        <h2>模板编辑</h2>
+        <p class="hint">提示：目标锚点可填写 <code>#node-2</code>、<code>#node-3</code>、<code>#ending-a</code> 等。</p>
+        <div id="editorRoot"></div>
+        <button id="renderBtn" type="button">更新预览</button>
+      </aside>
+
+      <section class="preview" aria-label="剧情预览" id="storyRoot"></section>
+    </main>
+
+    <template id="nodeEditorTemplate">
+      <fieldset class="editor-block">
+        <legend></legend>
+        <label>节点标题<input data-field="title" type="text" /></label>
+        <label>节点描述<textarea data-field="description" rows="3"></textarea></label>
+        <label>节点图片 URL（16:9）<input data-field="image" type="url" /></label>
+
+        <div class="choice-editors"></div>
+      </fieldset>
+    </template>
+
+    <template id="choiceEditorTemplate">
+      <fieldset class="choice-block">
+        <legend></legend>
+        <label>选项文案<input data-field="text" type="text" /></label>
+        <label>选项图片 URL（16:9）<input data-field="image" type="url" /></label>
+        <label>超链接目标（锚点）<input data-field="target" type="text" /></label>
+      </fieldset>
+    </template>
+
+    <script src="main.js"></script>
+  </body>
+</html>
