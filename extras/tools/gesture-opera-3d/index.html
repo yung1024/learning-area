@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手势操控 3D 戏曲物体</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="hud">
+      <h1>手势操控 · 3D 戏曲物体</h1>
+      <p>单手：上下左右移动 · 双手拉开/靠近：放大缩小</p>
+      <p id="status">正在初始化摄像头与手势识别…</p>
+    </div>
+
+    <video id="webcam" autoplay playsinline muted></video>
+    <canvas id="overlay"></canvas>
+    <div id="stage"></div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
